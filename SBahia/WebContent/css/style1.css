@@ -1,0 +1,9 @@
+.div-quantite-prix{
+	display: inline-block;
+	text-align: right;
+	float: right;
+}
+.div-quantite-prix p{
+	margin-bottom: 0rem;
+	height: 19px;
+}
