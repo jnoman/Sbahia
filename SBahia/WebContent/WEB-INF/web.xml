@@ -69,4 +69,13 @@
   	<servlet-name>Detail</servlet-name>
   	<url-pattern>/detail</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>HomeClient</servlet-name>
+  	<servlet-class>servlets.HomeClient</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>HomeClient</servlet-name>
+  	<url-pattern>/index</url-pattern>
+  </servlet-mapping>
 </web-app>

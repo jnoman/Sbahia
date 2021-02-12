@@ -4,5 +4,5 @@ import beans.Users;
 import database.DaoException;
 
 public interface UsersService {
-	Users login(String email, String password) throws DaoException,BeanException;
+	Users login(UserLogin userLogin) throws DaoException,BeanException;
 }

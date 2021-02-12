@@ -19,7 +19,7 @@ public class UsersServiceImpl implements UsersService {
     }
 
 	@Override
-	public Users login(String email, String password) throws DaoException, BeanException {
+	public Users login(UserLogin userLogin) throws DaoException, BeanException {
 		Connection connexion = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultat = null;
@@ -28,11 +28,11 @@ public class UsersServiceImpl implements UsersService {
         try {
             connexion = daoFactory.getConnection();
             preparedStatement = connexion.prepareStatement("select id,nom_complet,Role from users where Email=? and password=?;");
-            preparedStatement.setString(1, email);
-            preparedStatement.setString(2, password);
+            preparedStatement.setString(1, userLogin.getEmail());
+            preparedStatement.setString(2, userLogin.getPassword());
             resultat = preparedStatement.executeQuery();
             if(resultat.next()) {
-            	user = new Users(resultat.getInt(1), resultat.getString(2), email, resultat.getInt(3));
+            	user = new Users(resultat.getInt(1), resultat.getString(2), userLogin.getEmail(), resultat.getInt(3));
             }
         } catch (SQLException e) {
             throw new DaoException("Impossible de communiquer avec la base de donn�es");

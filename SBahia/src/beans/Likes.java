@@ -15,7 +15,7 @@ public class Likes {
 	public void setIdProduit(int idProduit) {
 		this.idProduit = idProduit;
 	}
-	public Likes(int idUser, int idProduit, boolean islike) {
+	public Likes(int idUser, int idProduit) {
 		super();
 		this.idUser = idUser;
 		this.idProduit = idProduit;

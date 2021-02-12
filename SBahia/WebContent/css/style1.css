@@ -7,3 +7,15 @@
 	margin-bottom: 0rem;
 	height: 19px;
 }
+.span-like i{
+	color: red;
+}
+
+.span-like{
+	font-size: 24px;
+	padding-top: 10px;
+	cursor: pointer;
+}
+.span-like p{
+display: inline-block;
+}

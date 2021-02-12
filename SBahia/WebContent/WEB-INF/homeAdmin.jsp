@@ -29,7 +29,7 @@
 
 		<div class="row row-cols-1 row-cols-md-3 g-4">
 			<c:forEach var="article" items="${ listProduit }" varStatus="status">
-				<div class="col mb-2">
+				<div class="col-lg-4 d-flex align-items-stretch">
 					<div class="card mx-2">
 						<img src="data:image/jpeg;base64,${ images[status.index] }"
 							class="card-img-top" alt="..." style="height: 200px">

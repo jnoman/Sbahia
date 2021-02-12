@@ -15,6 +15,7 @@ import beans.Users;
 import daoRole.RoleDao;
 import database.DaoException;
 import database.DaoFactory;
+import serviceUsers.UserLogin;
 import serviceUsers.UsersService;
 
 @WebServlet("/Login")
@@ -38,7 +39,7 @@ public class Login extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		try {
-			Users user = usersService.login(email, password);
+			Users user = usersService.login(new UserLogin(email, password));
 			if(user != null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("logged", user);

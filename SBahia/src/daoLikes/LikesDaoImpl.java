@@ -116,7 +116,7 @@ public class LikesDaoImpl implements LikesDao {
 
         try {
             connexion = daoFactory.getConnection();
-            preparedStatement = connexion.prepareStatement("select count(*) from likes whereidProduit=?;");
+            preparedStatement = connexion.prepareStatement("select count(*) from likes where idProduit=?;");
             preparedStatement.setInt(1, idProduit);
             resultat = preparedStatement.executeQuery();
             resultat.next();
